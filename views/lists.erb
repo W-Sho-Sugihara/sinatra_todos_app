@@ -1,0 +1,17 @@
+<ul id="lists">
+  <% sort_lists(@lists) do |list, index| %>
+    <% if list[:completed] %>  
+      <li class="complete">
+    <% else %>   
+      <li>
+    <% end %>
+        <a href="/list/<%= index %>">
+          <h2><%= list[:name] %></h2>
+          <p><%= uncompleted_todos_count(list) %> / <%= count_todos(list) %></p>
+        </a>
+      </li>
+  <% end %>
+
+<% content_for :header_links do %>
+  <a class="add" href="/lists/new">New List</a>  
+<% end %>

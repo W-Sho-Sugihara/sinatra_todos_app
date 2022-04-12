@@ -2,7 +2,7 @@
   <header>
     <h2>Editing '<%= @list_data[:name] %>'</h2>
     <ul>
-      <form action="/list/<%= params[:id] %>/delete" method="post">
+      <form class="delete" action="/list/<%= params[:id] %>/delete" method="post">
         <button type="submit" class="delete">Delete List</button>
       </form>
     </ul>
